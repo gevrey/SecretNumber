@@ -70,3 +70,5 @@ win2.add(button)
 button.addEventListener('click',function(){
 alert("click me now")
 });
+
+tab2.active = true;
