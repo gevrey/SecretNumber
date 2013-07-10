@@ -66,7 +66,7 @@ tabGroup.addTab(tab2);
 // open tab group
 tabGroup.open();
 
-var secretNumber = getRandomNumber();
+var secretNumber = getRandomNumber(50000);
 label1.text = "Secret number is " + secretNumber.toString( );
 
 button = Ti.UI.createButton({width:150,height:80,title:"Click Me"})

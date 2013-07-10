@@ -3,6 +3,6 @@
  */
 
 
-function getRandomNumber( ) {
-	return Math.floor(Math.random( ) * 100);
+function getRandomNumber(maxNumber) {
+	return Math.floor(Math.random( ) * (maxNumber+1));
 }
