@@ -3,7 +3,7 @@ Titanium.UI.setBackgroundColor('#050');
 
 //var tools = require('./tools');
 
-Ti.include('businessRules.js')
+Ti.include('businessRules.js');
 
 // create tab group
 var tabGroup = Titanium.UI.createTabGroup();
