@@ -54,8 +54,6 @@ var secretNumber = getRandomNumber(100);
 
 button1.addEventListener('click',function()
 {
-
-
 	result=verifyGuess(yourNumber.value, secretNumber);
 	var textresult= "";
 	if (result == 0) {
@@ -71,6 +69,9 @@ button1.addEventListener('click',function()
 
 	alert("Your guess is too "+textresult);
 	
+	guessStatus = getNumberOfGuesses();
+	label1.text = ">> numberOfGuesses: " + guessStatus.numberOfGuesses + " - maxGuesses: " + guessStatus.maxGuesses;
+
 }
 );
 
