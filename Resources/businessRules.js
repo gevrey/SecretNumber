@@ -22,7 +22,6 @@ function verifyGuess(guessedNumber, secretNumber) {
 	return result;
 }
 
-
 function getNumberOfGuesses(){
   var guessStatus = {
     maxGuesses:maxGuesses,
