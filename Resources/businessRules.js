@@ -1,5 +1,6 @@
 /**
- * @author Christophe
+ * @author Christophe Gevrey & Yves Feigneux 
+ * July 2013
  */
 
 var maxGuesses = 6;
@@ -8,7 +9,6 @@ var numberOfGuesses = 0;
 function getRandomNumber(maxNumber) {
 	return Math.floor(Math.random( ) * (maxNumber+1));
 }
-
 
 function verifyGuess(guessedNumber, secretNumber) {
 	numberOfGuesses++;
