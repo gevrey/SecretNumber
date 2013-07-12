@@ -2,7 +2,7 @@
  * @author Christophe
  */
 
-
+var maxGuesses=13;
 function getRandomNumber(maxNumber) {
 	return Math.floor(Math.random( ) * (maxNumber+1));
 }
@@ -19,3 +19,10 @@ function verifyGuess(guessedNumber, secretNumber) {
 	return result;
 
 }
+
+
+function getNumberOfGuesses(){
+	
+	return maxGuesses;
+}
+
