@@ -41,7 +41,8 @@ var yourNumber = Ti.UI.createTextField({
 		clearOnEdit:true
 	});
 win1.add(yourNumber);
-label1.text=getNumberOfGuesses();
+var guessStatus = getNumberOfGuesses();
+label1.text = "numberOfGuesses: " + guessStatus.numberOfGuesses + " - maxGuesses: " + guessStatus.maxGuesses;
 
 
 /*YourNumber.addEventListener('clic',function(e){
