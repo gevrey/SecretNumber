@@ -41,6 +41,8 @@ var yourNumber = Ti.UI.createTextField({
 		clearOnEdit:true
 	});
 win1.add(yourNumber);
+label1.text=getNumberOfGuesses();
+
 
 /*YourNumber.addEventListener('clic',function(e){
 	alert(e.source.text)
@@ -51,6 +53,8 @@ var secretNumber = getRandomNumber(100);
 
 button1.addEventListener('click',function()
 {
+
+
 	result=verifyGuess(yourNumber.value, secretNumber);
 	var textresult= "";
 	if (result == 0) {
@@ -61,7 +65,7 @@ button1.addEventListener('click',function()
 		textresult = "small";
 	}
 	else if (result == 1) {
-		textresult = "big";
+		textresult = "big"; 
 	};
 
 	alert("Your guess is too "+textresult);
