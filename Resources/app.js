@@ -38,7 +38,8 @@ var yourNumber = Ti.UI.createTextField({
 		right:60,
 		font:{fontSize:13},
 		color:'#999',
-		clearOnEdit:true
+		clearOnEdit:true,
+	    keyboardType: Titanium.UI.KEYBOARD_NUMBER_PAD		
 	});
 win1.add(yourNumber);
 var guessStatus = getNumberOfGuesses();
@@ -67,11 +68,11 @@ button1.addEventListener('click',function()
 		textresult = "big"; 
 	};
 
-	alert("Your guess is too "+textresult);
+	alert("Your guess '" + yourNumber.value + "' is too " + textresult);
 	
 	guessStatus = getNumberOfGuesses();
 	label1.text = ">> numberOfGuesses: " + guessStatus.numberOfGuesses + " - maxGuesses: " + guessStatus.maxGuesses;
-
+	yourNumber.value = '';
 }
 );
 
