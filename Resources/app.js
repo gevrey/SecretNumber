@@ -1,14 +1,12 @@
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#050');
 
-//var tools = require('./tools');
-
+// import businessRules.js
 Ti.include('businessRules.js');
 
 // create tab group
+
 var tabGroup = Titanium.UI.createTabGroup();
-
-
 //
 // create base UI tab and root window
 //
@@ -32,7 +30,7 @@ var label1 = Titanium.UI.createLabel({
 });
 
 win1.add(label1);
-var YourNumber = Ti.UI.createTextField({
+var yourNumber = Ti.UI.createTextField({
 		hintText:'Your number between 1 and 100',
 		height:32,
 		top:70,
@@ -42,17 +40,35 @@ var YourNumber = Ti.UI.createTextField({
 		color:'#999',
 		clearOnEdit:true
 	});
-win1.add(YourNumber);
+win1.add(yourNumber);
 
 /*YourNumber.addEventListener('clic',function(e){
 	alert(e.source.text)
 });*/
 button1 = Ti.UI.createButton({width:100,height:50,top:100,title:"Compare"})
 win1.add(button1);
+var secretNumber = getRandomNumber(100);
 
-button1.addEventListener('click',function(){
-alert("Your Number is greater than the secret number")
-});
+button1.addEventListener('click',function()
+{
+	result=verifyGuess(yourNumber.value, secretNumber);
+	var textresult= "";
+	if (result == 0) {
+		alert("Congratulations!!! Play again");
+		return;
+	}
+	if (result == -1) {
+		textresult = "small";
+	}
+	else if (result == 1) {
+		textresult = "big";
+	};
+
+	alert("Your guess is too "+textresult);
+	
+}
+);
+
 //
 // create controls tab and root window
 //
@@ -87,7 +103,7 @@ tabGroup.addTab(tab2);
 // open tab group
 tabGroup.open();
 
-var secretNumber = getRandomNumber(100);
+
 label2.text = "Secret number is " + secretNumber.toString( );
 
 button2 = Ti.UI.createButton({width:150,height:80,title:"Click here to know the secret number"})
