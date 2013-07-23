@@ -118,3 +118,30 @@ win2.add(button2);
 button2.addEventListener('click',function(){
 alert(label2.text)
 });
+function addMenu(win){
+	var activity=win.activity;
+	activity.onCreateOptionsMenu = 
+		function(e){
+			var firstItem=e.menu.add({
+				title:'Menu 1'
+			});
+			firstItem.addEventListener("click",function(e){
+				Ti.API.debug('Menu 1');
+			});
+			var secondItem=e.menu.add({
+				title:'Menu 2'
+			});
+			secondItem.addEventListener("click",function(e){
+				Ti.API.warn('Menu 2');
+			});
+			var thirdItem=e.menu.add({
+				title:'Menu 3'
+			});
+			thirdItem.addEventListener("click",function(e){
+				alert('Menu 3');
+			});
+		};
+
+}
+
+addMenu(win1);
